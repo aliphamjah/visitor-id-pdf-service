@@ -1,4 +1,4 @@
-name = "visitor-pdf-service"
+name = "visitor-id-pdf-service"
 main = "index.js"
 compatibility_date = "2024-01-01"
 
