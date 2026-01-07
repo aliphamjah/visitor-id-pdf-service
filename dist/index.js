@@ -21566,12 +21566,13 @@
   async function generateVisitorCard({
     name = "",
     visitorNumber = "",
-    company = "Company Name",
+    company = "",
     date = "01-01-2026"
   } = {}) {
     if (!name || !visitorNumber) {
       throw new Error("Name and Visitor Number are required");
     }
+    company = company.trim() || "JNE";
     try {
       const pdfDoc = await PDFDocument_default.create();
       const cardW = mmToPt(85.6);

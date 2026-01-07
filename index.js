@@ -51,12 +51,14 @@ export default {
 async function generateVisitorCard({
   name = '',
   visitorNumber = '',
-  company = 'Company Name',
+  company = '',
   date = '01-01-2026'
 } = {}) {
   if (!name || !visitorNumber) {
     throw new Error('Name and Visitor Number are required');
   }
+
+  company = company.trim() || "JNE";
 
   try {
     const pdfDoc = await PDFDocument.create();
@@ -488,4 +490,4 @@ function safeName(s) {
     .replace(/\s+/g, "_"); 
 }
 
-// https://visitor-pdf-service.aliphamjah.workers.dev/generate-visitor-card?name=Alip%20Hamjah&visitorNumber=VIS-001&company=Google&date=20-12-2025
+// https://visitor-id-pdf-service.bfejne.workers.dev/generate-visitor-card?name=Alip%20Hamjah&visitorNumber=VIS-001&company=Google&date=20-12-2025
